@@ -9,6 +9,7 @@ import case5 from "../public/case5.jpg"
 import case6 from "../public/case6.jpg"
 import case7 from "../public/case7.jpg"
 import case8 from "../public/case8.jpg"
+import { StaticImageData } from "next/image"
 
 export const success=[
 {id:1,img:a7,
@@ -22,8 +23,13 @@ name:"所羅門台北市信義區A7"},
  name:"蘭嶼電廠"
 }
 ] 
+type  CaseItem = {
+  id: number;
+  image: StaticImageData; // Next.js 的 Image 通常是這個型別
+  title: string;
+}
 
-export const cases = [
+export const cases:CaseItem[] = [
 { id: 1, image: case1, title: "案例一" },
 { id: 2, image: case2, title: "案例二" },
 { id: 3, image: case3, title: "案例三" },

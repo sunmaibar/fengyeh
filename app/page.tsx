@@ -1,8 +1,10 @@
 import Image from "next/image";
 import HeroImg from "../public/hero.jpg"
 import aboutImg from "../public/about.jpg"
-import { success, cases } from "@/util/success";
-import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
+import { success } from "@/util/success";
+import MoreCases from "@/components/morecases";
+
+import Autoplay from "embla-carousel-autoplay"
 
 import Navbar from "@/components/navbar";
 
@@ -12,24 +14,9 @@ export default function Home() {
     <div className="flex flex-col min-h-screen">
       {/* Navbar */}
       <Navbar />
-      {/* <nav className="fixed top-0 left-0 w-full flex justify-between items-center p-4 bg-white shadow z-50">
-        <div className="flex items-center">
-          <Image src={logo} alt="logo" width={42} />
-          <div className="text-xl font-bold">豐業環保科技</div>
-        </div>
-
-
-        <div className="space-x-4">
-          <a href="#about" className="hover:underline">關於我們</a>
-          <a href="#cases" className="hover:underline">成功案例</a>
-          <a href="#more-cases" className="hover:underline">現場案例</a>
-          <a href="#services-contact" className="hover:underline">服務項目</a>
-        </div>
-      </nav> */}
-
       {/* Hero Section */}
       <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
-        <Image src={HeroImg} alt="豐葉環保科技有限公司" priority fill className="object-cover " />
+        <Image src={HeroImg} alt="豐業環保科技有限公司" priority fill className="object-cover " />
         <div className="absolute inset-0 bg-black opacity-40" ></div>
         <div className="relative text-center text-white">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">潔淨未來，從此開始</h1>
@@ -38,7 +25,7 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section id="about" className="h-screen flex flex-col md:flex-row items-center justify-center p-8">
+      <section id="about" className=" flex flex-col md:flex-row items-center justify-center p-8">
         <div className="md:w-1/2 w-full h-1/2 md:h-full flex justify-center items-center">
           <Image src={aboutImg} alt="關於我們" className="object-cover h-full w-full rounded-lg shadow" />
         </div>
@@ -61,25 +48,9 @@ export default function Home() {
         </div>
       </section>
       {/* more case */}
-      <section id="more-cases" className="w-screen mx-auto py-16 ">
-        <h2 className="text-3xl font-bold text-center mb-8">現場案例</h2>
-        <div className="max-w-5xl mx-auto">
-          <Carousel>
-            <CarouselContent>
-              {cases.map((item) => (
-                <CarouselItem key={item.id} className="p-4 flex justify-center">
-                  <div className="w-full max-w-sm rounded-2xl shadow-lg overflow-hidden">
-                    <Image src={item.image} alt={item.title} className="w-full h-64 object-cover" />
-                    <div className="p-4 text-center font-medium">{item.title}</div>
-                  </div>
-                </CarouselItem>
-              ))}
-            </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
-          </Carousel>
-        </div>
-      </section>
+      {/* <section id="more-cases" className="w-screen mx-auto py-16 "> */}
+      <MoreCases />
+
       <section id="services-contact" className="w-full py-16 px-8 md:px-16 grid grid-cols-1 md:grid-cols-2 gap-8 justify-center bg-gray-100">
         <div>
           <h2 className="text-2xl font-bold mb-4">服務項目</h2>
@@ -108,6 +79,6 @@ export default function Home() {
         <p className="text-sm">豐業環保科技有限公司</p>
         <p className="text-xs">© 2025 All Rights Reserved</p>
       </footer>
-    </div>
+    </div >
   );
 }
