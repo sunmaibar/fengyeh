@@ -1,65 +1,111 @@
 import Image from "next/image";
+import HeroImg from "../public/hero.jpg"
+import aboutImg from "../public/about.jpg"
+import { success, cases } from "@/util/success";
+import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
+import logo from "../public/logo.png"
+
 
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
+    <div className="flex flex-col min-h-screen">
+      {/* Navbar */}
+      <nav className="fixed top-0 left-0 w-full flex justify-between items-center p-4 bg-white shadow z-50">
+        <div className="flex items-center">
+          <Image src={logo} alt="logo" width={42} />
+          <div className="text-xl font-bold">豐葉環保科技有限公司</div>
         </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
+
+
+        <div className="space-x-4">
+          <a href="#about" className="hover:underline">關於我們</a>
+          <a href="#cases" className="hover:underline">成功案例</a>
+          <a href="#more-cases" className="hover:underline">現場案例</a>
+          <a href="#services-contact" className="hover:underline">服務項目</a>
         </div>
-      </main>
+      </nav>
+
+      {/* Hero Section */}
+      <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
+        <Image src={HeroImg} alt="豐葉環保科技有限公司" priority fill className="object-cover " />
+        <div className="absolute inset-0 bg-black opacity-40" ></div>
+        <div className="relative text-center text-white">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4">潔淨未來，從此開始</h1>
+          <p className="text-lg md:text-2xl">豐葉環保科技 – 黑煙淨化器專家</p>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="h-screen flex flex-col md:flex-row items-center justify-center p-8">
+        <div className="md:w-1/2 w-full h-1/2 md:h-full flex justify-center items-center">
+          <Image src={aboutImg} alt="關於我們" className="object-cover h-full w-full rounded-lg shadow" />
+        </div>
+        <div className="md:w-1/2 w-full h-1/2 md:h-full flex flex-col justify-center p-8">
+          <h2 className="text-3xl font-bold mb-4">關於豐葉環保科技</h2>
+          <p className="text-lg leading-relaxed">我們致力於提供專業的黑煙淨化解決方案，改善空氣品質，守護環境健康。透過創新技術與專業團隊，我們為各產業提供量身打造的環保設備，實現真正的綠色永續。</p>
+        </div>
+      </section>
+
+      {/* Success Cases Section */}
+      <section id="cases" className=" p-8 bg-gray-100">
+        <h2 className="text-3xl font-bold text-center mb-12">成功案例</h2>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {success.map((item) => (
+            <div key={item.id} className="flex flex-col items-center text-center">
+              <Image src={item.img} alt={`案例${item.name}`} className="object-cover w-full h-64 rounded-lg shadow mb-4" />
+              <p className="text-lg font-medium"> {item.name}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+      {/* more case */}
+      <section id="more-cases" className="w-screen mx-auto py-16 ">
+        <h2 className="text-3xl font-bold text-center mb-8">現場案例</h2>
+        <div className="max-w-5xl mx-auto">
+          <Carousel>
+            <CarouselContent>
+              {cases.map((item) => (
+                <CarouselItem key={item.id} className="p-4 flex justify-center">
+                  <div className="w-full max-w-sm rounded-2xl shadow-lg overflow-hidden">
+                    <Image src={item.image} alt={item.title} className="w-full h-64 object-cover" />
+                    <div className="p-4 text-center font-medium">{item.title}</div>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious />
+            <CarouselNext />
+          </Carousel>
+        </div>
+      </section>
+      <section id="services-contact" className="w-full py-16 px-8 md:px-16 grid grid-cols-1 md:grid-cols-2 gap-8 justify-center bg-gray-100">
+        <div>
+          <h2 className="text-2xl font-bold mb-4">服務項目</h2>
+          <ul className="space-y-2 list-disc list-inside">
+            <li>柴油發電機過濾型黑煙淨化設備</li>
+            <li>柴油發電機直通型觸媒轉化器</li>
+            <li>現場設備規劃，設計，製作，施工</li>
+            <li>柴油濾煙再生觸媒</li>
+            <li>柴油引擎廢氣除臭處理設備</li>
+          </ul>
+        </div>
+        <div>
+          <h2 className="text-2xl font-bold mb-4">聯絡資訊</h2>
+          <p>負責人：羅文業</p>
+          <p>電話：03-4727729</p>
+          <p>手機：0922-213-695</p>
+          <p>統編：6049-0316</p>
+          <p>Email：fengyeh0922213695@outlook.com</p>
+          <p>地址：桃園市中壢區青峰路一段47號5樓</p>
+        </div>
+      </section>
+
+
+      {/* Footer */}
+      <footer className="bg-gray-800 text-white text-center py-4">
+        <p className="text-sm">豐葉環保科技有限公司</p>
+        <p className="text-xs">© 2025 All Rights Reserved</p>
+      </footer>
     </div>
   );
 }
