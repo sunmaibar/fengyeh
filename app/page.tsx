@@ -3,17 +3,19 @@ import HeroImg from "../public/hero.jpg"
 import aboutImg from "../public/about.jpg"
 import { success, cases } from "@/util/success";
 import { Carousel, CarouselContent, CarouselItem, CarouselPrevious, CarouselNext } from "@/components/ui/carousel";
-import logo from "../public/logo.png"
+
+import Navbar from "@/components/navbar";
 
 
 export default function Home() {
   return (
     <div className="flex flex-col min-h-screen">
       {/* Navbar */}
-      <nav className="fixed top-0 left-0 w-full flex justify-between items-center p-4 bg-white shadow z-50">
+      <Navbar />
+      {/* <nav className="fixed top-0 left-0 w-full flex justify-between items-center p-4 bg-white shadow z-50">
         <div className="flex items-center">
           <Image src={logo} alt="logo" width={42} />
-          <div className="text-xl font-bold">豐葉環保科技</div>
+          <div className="text-xl font-bold">豐業環保科技</div>
         </div>
 
 
@@ -23,7 +25,7 @@ export default function Home() {
           <a href="#more-cases" className="hover:underline">現場案例</a>
           <a href="#services-contact" className="hover:underline">服務項目</a>
         </div>
-      </nav>
+      </nav> */}
 
       {/* Hero Section */}
       <section className="relative h-screen w-full flex items-center justify-center overflow-hidden">
