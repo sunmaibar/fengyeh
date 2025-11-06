@@ -33,7 +33,7 @@ export default function Home() {
         <div className="absolute inset-0 bg-black opacity-40" ></div>
         <div className="relative text-center text-white">
           <h1 className="text-4xl md:text-6xl font-bold mb-4">潔淨未來，從此開始</h1>
-          <p className="text-lg md:text-2xl">豐葉環保科技 – 黑煙淨化器專家</p>
+          <p className="text-lg md:text-2xl">豐業環保科技 – 黑煙淨化器專家</p>
         </div>
       </section>
 
@@ -43,7 +43,7 @@ export default function Home() {
           <Image src={aboutImg} alt="關於我們" className="object-cover h-full w-full rounded-lg shadow" />
         </div>
         <div className="md:w-1/2 w-full h-1/2 md:h-full flex flex-col justify-center p-8">
-          <h2 className="text-3xl font-bold mb-4">關於豐葉環保科技</h2>
+          <h2 className="text-3xl font-bold mb-4">關於豐業環保科技</h2>
           <p className="text-lg leading-relaxed">我們致力於提供專業的黑煙淨化解決方案，改善空氣品質，守護環境健康。透過創新技術與專業團隊，我們為各產業提供量身打造的環保設備，實現真正的綠色永續。</p>
         </div>
       </section>
@@ -105,7 +105,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="bg-gray-800 text-white text-center py-4">
-        <p className="text-sm">豐葉環保科技有限公司</p>
+        <p className="text-sm">豐業環保科技有限公司</p>
         <p className="text-xs">© 2025 All Rights Reserved</p>
       </footer>
     </div>
