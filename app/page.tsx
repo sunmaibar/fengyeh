@@ -13,7 +13,7 @@ export default function Home() {
       <nav className="fixed top-0 left-0 w-full flex justify-between items-center p-4 bg-white shadow z-50">
         <div className="flex items-center">
           <Image src={logo} alt="logo" width={42} />
-          <div className="text-xl font-bold">豐葉環保科技有限公司</div>
+          <div className="text-xl font-bold">豐葉環保科技</div>
         </div>
 
 
