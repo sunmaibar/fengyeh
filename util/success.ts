@@ -30,13 +30,13 @@ type  CaseItem = {
 }
 
 export const cases:CaseItem[] = [
-{ id: 1, image: case1, title: "案例一" },
-{ id: 2, image: case2, title: "案例二" },
-{ id: 3, image: case3, title: "案例三" },
-{ id: 4, image: case4, title: "案例四" },
-{ id: 5, image: case5, title: "案例五" },
-{ id: 6, image: case6, title: "案例六" },
-{ id: 7, image: case7, title: "案例七" },
-{ id: 8, image: case8, title: "案例八" },
+{ id: 1, image: case1, title: "濾芯再生現場安裝拆卸作業" },
+{ id: 2, image: case2, title: "黑煙淨化器配管配線安裝工程" },
+{ id: 3, image: case3, title: "濾芯再生現場安裝拆卸作業" },
+{ id: 4, image: case4, title: "旺宏科技高溫再生後的濾芯" },
+{ id: 5, image: case5, title: "協助大同公司蘭嶼電廠黑煙檢測" },
+{ id: 6, image: case6, title: "協助大同公司蘭嶼電廠黑煙檢測" },
+{ id: 7, image: case7, title: "協助大同公司蘭嶼電廠黑煙檢測" },
+{ id: 8, image: case8, title: "協助大同公司蘭嶼電廠黑煙檢測" },
 
 ];
